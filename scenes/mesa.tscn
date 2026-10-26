@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dupedoeiorrya"]
+
+[ext_resource type="Texture2D" uid="uid://b1bdkh40i72rs" path="res://assets/cartas/expansion_01/DBZC-01.jpg" id="1_3koje"]
+
+[node name="Mesa" type="Node2D" unique_id=530350572]
+scale = Vector2(0.5, 0.5)
+
+[node name="Carta1" type="Sprite2D" parent="." unique_id=1209694119]
+position = Vector2(1098, 712)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_3koje")
