@@ -1,6 +1,10 @@
 [gd_scene format=3 uid="uid://dupedoeiorrya"]
 
 [ext_resource type="Texture2D" uid="uid://b1bdkh40i72rs" path="res://assets/cartas/expansion_01/DBZC-01.jpg" id="1_3koje"]
+[ext_resource type="Script" uid="uid://fvv3vr5yha4q" path="res://scenes/carta_1.gd" id="2_sx2gp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(632, 948)
 
 [node name="Mesa" type="Node2D" unique_id=530350572]
 scale = Vector2(0.5, 0.5)
@@ -9,3 +13,12 @@ scale = Vector2(0.5, 0.5)
 position = Vector2(1098, 712)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_3koje")
+script = ExtResource("2_sx2gp")
+
+[node name="Area2D" type="Area2D" parent="Carta1" unique_id=1731647052]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Carta1/Area2D" unique_id=2029225979]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[connection signal="input_event" from="Carta1/Area2D" to="Carta1" method="_on_area_2d_input_event"]

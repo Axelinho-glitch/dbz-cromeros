@@ -1,0 +1,16 @@
+extends Sprite2D
+
+var arrastrando := false
+
+func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			arrastrando = event.pressed
+			
+func _process(delta: float) -> void:
+	if arrastrando:
+		global_position = get_global_mouse_position()
+	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT) == false:
+			arrastrando = false
+	
